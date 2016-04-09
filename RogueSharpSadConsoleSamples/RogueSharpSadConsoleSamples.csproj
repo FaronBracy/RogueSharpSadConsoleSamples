@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6294F96D-6977-4A46-9516-ED5D009AC6D7}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RogueSharpSadConsoleSamples</RootNamespace>
+    <AssemblyName>RogueSharpSadConsoleSamples</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MonoGame.Framework, Version=3.5.0.1678, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MonoGame.Framework.WindowsDX.3.5.0.1678\lib\net40\MonoGame.Framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="OpenTK, Version=1.1.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenTK.1.1.2225.0\lib\net20\OpenTK.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RogueSharp, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RogueSharp.3.0.0\lib\portable-net40+sl50+win+wpa81+wp80\RogueSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SadConsole.Core, Version=2.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SadConsole.Core.2.5.0.0\lib\net45\SadConsole.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\Ability.cs" />
+    <Compile Include="Abilities\Fireball.cs" />
+    <Compile Include="Abilities\Heal.cs" />
+    <Compile Include="Abilities\DoNothing.cs" />
+    <Compile Include="Abilities\LightningBolt.cs" />
+    <Compile Include="Abilities\MagicMissile.cs" />
+    <Compile Include="Abilities\RevealMap.cs" />
+    <Compile Include="Abilities\Whirlwind.cs" />
+    <Compile Include="Core\Actor.cs" />
+    <Compile Include="Systems\InputState.cs" />
+    <Compile Include="Monsters\Ooze.cs" />
+    <Compile Include="Monsters\Goblin.cs" />
+    <Compile Include="Monsters\Kobold.cs" />
+    <Compile Include="Behaviors\FullyHeal.cs" />
+    <Compile Include="Behaviors\SplitOoze.cs" />
+    <Compile Include="Behaviors\RunAway.cs" />
+    <Compile Include="Behaviors\ShoutForHelp.cs" />
+    <Compile Include="Behaviors\StandardMoveAndAttack.cs" />
+    <Compile Include="Core\Gold.cs" />
+    <Compile Include="Interfaces\IAbility.cs" />
+    <Compile Include="Interfaces\IActor.cs" />
+    <Compile Include="Interfaces\IBehavior.cs" />
+    <Compile Include="Interfaces\ITargetable.cs" />
+    <Compile Include="Interfaces\IItem.cs" />
+    <Compile Include="Equipment\BodyEquipment.cs" />
+    <Compile Include="Core\Colors.cs" />
+    <Compile Include="Core\Equipment.cs" />
+    <Compile Include="Equipment\FeetEquipment.cs" />
+    <Compile Include="Equipment\HandEquipment.cs" />
+    <Compile Include="Equipment\HeadEquipment.cs" />
+    <Compile Include="Interfaces\IDrawable.cs" />
+    <Compile Include="Interfaces\IEquipment.cs" />
+    <Compile Include="Interfaces\IScheduleable.cs" />
+    <Compile Include="Interfaces\ITreasure.cs" />
+    <Compile Include="Core\Item.cs" />
+    <Compile Include="Items\TeleportScroll.cs" />
+    <Compile Include="Items\RevealMapScroll.cs" />
+    <Compile Include="Items\HealingPotion.cs" />
+    <Compile Include="Items\NoItem.cs" />
+    <Compile Include="Items\DestructionWand.cs" />
+    <Compile Include="Items\ArmorScroll.cs" />
+    <Compile Include="Items\Whetstone.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Systems\AbilityGenerator.cs" />
+    <Compile Include="Systems\ActorGenerator.cs" />
+    <Compile Include="Systems\EquipmentGenerator.cs" />
+    <Compile Include="Systems\ItemGenerator.cs" />
+    <Compile Include="Systems\MapGenerator.cs" />
+    <Compile Include="Systems\MessageLog.cs" />
+    <Compile Include="Systems\Pool.cs" />
+    <Compile Include="Systems\CommandSystem.cs" />
+    <Compile Include="Core\Direction.cs" />
+    <Compile Include="Core\Door.cs" />
+    <Compile Include="Core\DungeonMap.cs" />
+    <Compile Include="RogueGame.cs" />
+    <Compile Include="Systems\TargetingSystem.cs" />
+    <Compile Include="Core\TreasurePile.cs" />
+    <Compile Include="Core\Monster.cs" />
+    <Compile Include="Core\Player.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Systems\SchedulingSystem.cs" />
+    <Compile Include="Core\Stairs.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Fonts\Cheepicus12.font">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Fonts\IBM.font">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Fonts\Cheepicus_12x12.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Fonts\IBM8x16.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
